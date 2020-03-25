@@ -7,8 +7,8 @@ import java.awt.*;
  */
 public abstract class Entidade {
 
-    // Comprimendo de uma entidade. Considere a área fixa de um quadrado com 5 unidades de lado.
-    public static final int W = 5;
+    // Tamanho de uma entidade. Considere a área fixa de um quadrado com 5 unidades de lado.
+    public static final int SIZE = 5;
 
     protected int x, y;
 
