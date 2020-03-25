@@ -5,10 +5,9 @@ import java.awt.*;
 /**
  *
  */
-public class Comida extends Entidade{
+public class Comida extends Entidade {
 
     /**
-     *
      * @param x
      * @param y
      */

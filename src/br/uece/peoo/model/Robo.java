@@ -12,6 +12,7 @@ public class Robo extends Entidade {
 
     /**
      * Construtor que recebe a cor do robô e o inicialize na posição (0,0)
+     *
      * @param cor
      */
     public Robo(Color cor) {
@@ -20,6 +21,7 @@ public class Robo extends Entidade {
 
     /**
      * Move o robo em uma direção recebe como parâmetro uma String e altera a posição do robô.
+     *
      * @param direction
      */
     private void mover(String direction) {
@@ -29,28 +31,28 @@ public class Robo extends Entidade {
     /**
      * Move o robô no eixo y em uma posição acima.
      */
-    private void up(){
+    private void up() {
 
     }
 
     /**
      * Move o robô no eixo y em uma posição abaixo.
      */
-    private void down(){
+    private void down() {
 
     }
 
     /**
      * Move o robô no eixo x em uma posição para a direita.
      */
-    private void right(){
+    private void right() {
 
     }
 
     /**
      * Move o robô no eixo x em uma posição para a esquerda.
      */
-    private void left(){
+    private void left() {
 
     }
 
