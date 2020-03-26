@@ -6,7 +6,15 @@ __Valor__: 1 ponto
 
 __Data de entrega__: 31 de março
 
-__Equipe__: até 2 pessoas
+__Equipe__:
+
+Nome                                        | Matrícula
+:-------------------------------------------|-------------:
+Éricson Rogério Moreira                     |1538663
+Paulo Henrique Souza Filho                  |1509022 
+
+
+
 
 Existe uma linguagem de programação chamada Logo que é muito usada no Brasil em escolas de primeiro e segundo grau. Nesta linguagem você pode programar os movimentos na tela de um personagem, como uma tartaruga. Este personagem descreve movimentos riscando ou não a tela. Imagine que o personagem move-se no eixo cartesiano (x,y) e que seu objetivo é alcançar sua comida que está previamente definida em alguma posição do eixo. O personagem não pode se mover nas regiões cujas coordenadas são negativas. Com base nessa descrição, faça o que se pede:
 
