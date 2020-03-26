@@ -12,7 +12,7 @@ public abstract class Entidade {
 
     protected int x, y;
 
-    protected Color cor;
+    protected Color color;
 
     public int getX() {
         return x;
@@ -30,18 +30,18 @@ public abstract class Entidade {
         this.y = y;
     }
 
-    public Color getCor() {
-        return cor;
+    public Color getColor() {
+        return color;
     }
 
-    public void setCor(Color cor) {
-        this.cor = cor;
+    public void setColor(Color color) {
+        this.color = color;
     }
 
-    public Entidade(int x, int y, Color cor) {
+    public Entidade(int x, int y, Color color) {
         this.x = x;
         this.y = y;
-        this.cor = cor;
+        this.color = color;
     }
 
 }

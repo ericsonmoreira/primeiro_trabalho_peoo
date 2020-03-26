@@ -1,102 +1,87 @@
 package br.uece.peoo.view;
 
+import br.uece.peoo.exceptions.MovimentoInvalidoException;
+import br.uece.peoo.model.Comida;
+import br.uece.peoo.model.Entidade;
+import br.uece.peoo.model.Robo;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 
-public class RoboPanel extends JPanel implements KeyListener, Runnable {
+public class RoboPanel extends JPanel implements KeyListener {
 
     // Constantes
     public static final int WIDTH = 400;
     public static final int HEIGTH = 400;
 
-    private Graphics2D g2D;
-    private BufferedImage image;
+    int teste = 0;
 
-    private Thread thread;
-    private boolean running;
-    private long targetTime;
+    private Robo robo;
 
+    private Comida comida;
 
     @Override
     public void addNotify() {
         super.addNotify();
-        thread = new Thread(this);
-        thread.start();
-    }
-
-    private void setFPS(int fps) {
-        this.targetTime = 1000 / fps;
     }
 
     @Override
-    public void keyTyped(KeyEvent e) {
+    public void keyTyped(KeyEvent event) {
 
     }
 
     @Override
-    public void keyPressed(KeyEvent e) {
-
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-
-    }
-
-    @Override
-    public void run() {
-        if (running) return;
-        init();
-        long startTime, elapsed, wait;
-        while (running) {
-            startTime = System.nanoTime();
-            update();
-            requestRender();
-            elapsed = System.nanoTime() - startTime;
-            wait = targetTime - elapsed / 1000000;
-            if (wait > 0) {
-                try {
-                    Thread.sleep(wait);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+    public void keyPressed(KeyEvent event) {
+        int k = event.getKeyCode();
+        try {
+            if (k == KeyEvent.VK_UP) {
+                this.robo.mover(Robo.UP);
+                teste++;
             }
+            if (k == KeyEvent.VK_DOWN) this.robo.mover(Robo.DOWN);
+            if (k == KeyEvent.VK_RIGHT) this.robo.mover(Robo.RIGHT);
+            if (k == KeyEvent.VK_LEFT) this.robo.mover(Robo.LEFT);
+            paint(this.getGraphics());
+            System.out.println(event); // Testando
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        } catch (MovimentoInvalidoException e) {
+            System.out.println(e.getMessage());
         }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent event) {
 
     }
 
     private void init() {
-
-        image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_ARGB);
-        g2D = image.createGraphics();
-        running = true;
-        setFPS(10);
-
+        robo = new Robo(Color.BLUE);
+        comida = new Comida(100, 100);
     }
 
-    public void requestRender() {
-        render(g2D);
-        Graphics g = getGraphics();
-        g.drawImage(image, 0, 0, null);
-        g.dispose();
-
-    }
-
-    public void update() {
-
-    }
-
-    public void render(Graphics2D g2D) {
-        g2D.clearRect(0, 0, WIDTH, HEIGHT);
-    }
 
     public RoboPanel() {
         setPreferredSize(new Dimension(WIDTH, HEIGTH));
         setFocusable(true);
+        setVisible(true);
         requestFocus();
         addKeyListener(this);
+        init();
+    }
+
+    public void paintEntidade(Graphics g, Entidade entidade) {
+        g.setColor(entidade.getColor());
+        g.fillRect(entidade.getX(), entidade.getY(), Entidade.SIZE, Entidade.SIZE);
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        g.clearRect(0,0, WIDTH, WIDTH); // Limpando tudo
+        paintEntidade(g, robo); // Desenhando o Robo
+        paintEntidade(g, comida); // Desenhando a Comida
     }
 }

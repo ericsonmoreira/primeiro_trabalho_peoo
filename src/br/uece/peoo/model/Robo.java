@@ -12,10 +12,10 @@ import java.awt.*;
 public class Robo extends Entidade {
 
     // Constantes
-    public final String UP = "up";
-    public final String DOWN = "up";
-    public final String RIGHT = "up";
-    public final String LEFT = "up";
+    public static final String UP = "up";
+    public static final String DOWN = "down";
+    public static final String RIGHT = "right";
+    public static final String LEFT = "left";
 
     /**
      * Construtor que recebe a cor do robô e o inicialize na posição (0,0)
@@ -31,7 +31,7 @@ public class Robo extends Entidade {
      *
      * @param direction Recebe como parâmetro uma String e altera a posição do robô.
      */
-    private void mover(String direction) throws IllegalArgumentException, MovimentoInvalidoException {
+    public void mover(String direction) throws IllegalArgumentException, MovimentoInvalidoException {
         if (direction.equals(UP)) {
             up();
         } else if (direction.equals(DOWN)) {
@@ -51,7 +51,7 @@ public class Robo extends Entidade {
      * @param direction Recebe como parâmetro um inteiro e altera a posição do robô.
      *                  1 representa “up”, 2 representa “down”, 3 representa “right” e 4 representa “left”.
      */
-    private void mover(int direction) throws IllegalArgumentException, MovimentoInvalidoException {
+    public void mover(int direction) throws IllegalArgumentException, MovimentoInvalidoException {
         if (direction == 1) {
             up();
         } else if (direction == 2) {
@@ -91,18 +91,18 @@ public class Robo extends Entidade {
     private void right() throws MovimentoInvalidoException {
         int x = this.x + SIZE;
         if (posicaoIsValida(x, this.y)) {
-            setY(y);
-        } else throw new MovimentoInvalidoException(this.x, y, this);
+            setX(x);
+        } else throw new MovimentoInvalidoException(x, this.y, this);
     }
 
     /**
      * Move o robô no eixo x em uma posição para a esquerda.
      */
     private void left() throws MovimentoInvalidoException {
-        int y = this.y - SIZE;
+        int x = this.x - SIZE;
         if (posicaoIsValida(x, this.y)) {
-            setY(y);
-        } else throw new MovimentoInvalidoException(this.x, y, this);
+            setX(x);
+        } else throw new MovimentoInvalidoException(x, this.y, this);
     }
 
     /**
@@ -112,7 +112,7 @@ public class Robo extends Entidade {
      * @return false se a posição é inválida, true, caso contrário.
      */
     public static boolean posicaoIsValida(int x, int y) {
-        if (x < 0 || x > RoboPanel.WIDTH - 5 || y < 0 || y > RoboPanel.HEIGTH)
+        if (x < 0 || x > RoboPanel.WIDTH - SIZE || y < 0 || y > RoboPanel.HEIGTH - SIZE)
             return false;
         else
             return true;
@@ -123,7 +123,7 @@ public class Robo extends Entidade {
         return "Robo{" +
                 "x=" + x +
                 ", y=" + y +
-                ", cor=" + cor +
+                ", cor=" + color +
                 '}';
     }
 }

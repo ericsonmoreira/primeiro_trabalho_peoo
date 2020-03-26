@@ -13,7 +13,7 @@ public class Main {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false); // Não pode mudar o tramano do JFrame
         frame.pack();
-        frame.setPreferredSize(new Dimension(RoboPanel.WIDTH, RoboPanel.WIDTH));
+        frame.setPreferredSize(new Dimension(RoboPanel.WIDTH + 10, RoboPanel.WIDTH + 10));
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
