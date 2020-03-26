@@ -123,7 +123,6 @@ public class Robo extends Entidade {
         return "Robo{" +
                 "x=" + x +
                 ", y=" + y +
-                ", cor=" + color +
                 '}';
     }
 }
