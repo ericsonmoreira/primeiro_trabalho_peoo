@@ -44,8 +44,6 @@ public class RoboPanel extends JPanel implements KeyListener {
         }
     }
 
-
-
     @Override
     public void keyReleased(KeyEvent event) {
         // nada

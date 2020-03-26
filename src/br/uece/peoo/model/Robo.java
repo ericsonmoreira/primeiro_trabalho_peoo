@@ -5,6 +5,7 @@ import br.uece.peoo.exceptions.MovimentoInvalidoException;
 import br.uece.peoo.view.RoboPanel;
 
 import java.awt.*;
+import java.util.Random;
 
 /**
  *  Classe Robo que contendo dois atributos representando sua posição no eixo cartesiano e uma cor que o identifica.
@@ -63,6 +64,14 @@ public class Robo extends Entidade {
         } else {
             throw new IllegalArgumentException("Direção inválida: " + direction);
         }
+    }
+
+    /**
+     * Move o robo para uma direção aleatória.
+     */
+    public void moverRandom() throws MovimentoInvalidoException {
+        Random random = new Random();
+        mover(random.nextInt(4) + 1);
     }
 
     /**
@@ -127,7 +136,6 @@ public class Robo extends Entidade {
         return this.x == comida.getX() && this.y == comida.getY();
     }
 
-
     @Override
     public String toString() {
         return "Robo{" +
@@ -135,4 +143,5 @@ public class Robo extends Entidade {
                 ", y=" + y +
                 '}';
     }
+
 }
