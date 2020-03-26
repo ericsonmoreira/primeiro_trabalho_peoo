@@ -28,4 +28,12 @@ public class RoboInteligente extends Robo{
             moverRandom(); // mover do Robo Inteligente. Chamada recursiva.
         }
     }
+
+    @Override
+    public String toString() {
+        return "RoboInteligente{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
 }
