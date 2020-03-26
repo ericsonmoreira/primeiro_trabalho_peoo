@@ -1,6 +1,5 @@
 package br.uece.peoo.view;
 
-import br.uece.peoo.exceptions.MovimentoInvalidoException;
 import br.uece.peoo.model.Comida;
 import br.uece.peoo.model.Entidade;
 import br.uece.peoo.model.Robo;

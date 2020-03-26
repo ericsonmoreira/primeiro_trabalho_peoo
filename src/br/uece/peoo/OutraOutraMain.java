@@ -9,7 +9,8 @@ import br.uece.peoo.view.RoboPanel;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Scanner;
+
+import static br.uece.peoo.Main.pegarCoordenada;
 
 /**
  * Crie uma subclasse ReboInteligente que sobrescreve o método mover de forma que se robô fez um movimento inválido,
@@ -27,13 +28,8 @@ public class OutraOutraMain {
         // Posição da Comida
         int x, y;
 
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Digite o x da posição da comida(0 a 79):");
-        x = scanner.nextInt();
-
-        System.out.println("Digite o y da posição da comida(0 a 79):");
-        y = scanner.nextInt();
+        x = pegarCoordenada("Digite o X da posição da comida(0 a 79):");
+        y = pegarCoordenada("Digite o Y da posição da comida(0 a 79):");
 
         Comida comida = new Comida(x * Entidade.SIZE, y * Entidade.SIZE);
 
