@@ -118,6 +118,16 @@ public class Robo extends Entidade {
             return true;
     }
 
+    /**
+     *
+     * @param comida
+     * @return
+     */
+    public boolean achoComida(Comida comida) {
+        return this.x == comida.getX() && this.y == comida.getY();
+    }
+
+
     @Override
     public String toString() {
         return "Robo{" +

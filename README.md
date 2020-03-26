@@ -27,10 +27,10 @@ d) Sobrecarregue o método mover, mas ao invés de receber uma String, ele rece 
 
 e) Um método que verifique se o robô encontrou o alimento (está na mesma posição) e retorne um boolean
 
-1. Crie uma classe Main que instancie um robô, peça ao usuário para determinar a posição do alimento, e peça ao usuário para ficar movendo o robô até ele encontrar o alimento – não esqueça de tratar a exceção.
+1. [x] Crie uma classe Main que instancie um robô, peça ao usuário para determinar a posição do alimento, e peça ao usuário para ficar movendo o robô até ele encontrar o alimento – não esqueça de tratar a exceção.
  
-2. Crie outra classe Main que instancie dois robôs, peça ao usuário para entrar com a posição do alimento, e faça os dois robôs se moverem randomicamente, um de cada vez, até que um deles encontre o alimento. Ao final, mostre quem achou o alimento e o número de movimentos que cada robô fez.
+2. [ ] Crie outra classe Main que instancie dois robôs, peça ao usuário para entrar com a posição do alimento, e faça os dois robôs se moverem randomicamente, um de cada vez, até que um deles encontre o alimento. Ao final, mostre quem achou o alimento e o número de movimentos que cada robô fez.
 
-3. Crie uma subclasse ReboInteligente que sobrescreve o método mover de forma que se robô fez um movimento inválido, garanta que o próximo movimento será válido. Cria uma classe Main que instancie um robô normal e outro inteligente, peça ao usuário para entrar com a posição do alimento, e faça os dois robôs se moverem randomicamente, um de cada vez, até que um deles encontre o alimento. Ao final, mostre quem achou o alimento e o número de movimentos que cada robô fez.
+3. [ ] Crie uma subclasse ReboInteligente que sobrescreve o método mover de forma que se robô fez um movimento inválido, garanta que o próximo movimento será válido. Cria uma classe Main que instancie um robô normal e outro inteligente, peça ao usuário para entrar com a posição do alimento, e faça os dois robôs se moverem randomicamente, um de cada vez, até que um deles encontre o alimento. Ao final, mostre quem achou o alimento e o número de movimentos que cada robô fez.
 
-4. Para todos os itens anteriores, mostre os robôs se movendo na em uma matriz que representa a área de locomoção. Mostre também o alimento na posição indicada pelo usuário. Considere a área fixa de um quadrado com 5 unidades de lado.
+4. [x] Para todos os itens anteriores, mostre os robôs se movendo na em uma matriz que representa a área de locomoção. Mostre também o alimento na posição indicada pelo usuário. Considere a área fixa de um quadrado com 5 unidades de lado.

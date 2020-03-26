@@ -26,31 +26,25 @@ public class RoboPanel extends JPanel implements KeyListener {
     public void keyPressed(KeyEvent event) {
         int k = event.getKeyCode();
         try {
-            if (k == KeyEvent.VK_UP) {
-                this.robo.mover(Robo.UP);
-                this.msgRofape = robo.toString();
-            }
-            if (k == KeyEvent.VK_DOWN) {
-                this.robo.mover(Robo.DOWN);
-                this.msgRofape = robo.toString();
-
-            }
-            if (k == KeyEvent.VK_RIGHT) {
-                this.robo.mover(Robo.RIGHT);
-                this.msgRofape = robo.toString();
-            }
-            if (k == KeyEvent.VK_LEFT) {
-                this.robo.mover(Robo.LEFT);
-                this.msgRofape = robo.toString();
-            }
-        } catch (IllegalArgumentException e) { // Pegando qualquer exception
-            this.msgRofape = e.getMessage();
-        } catch (MovimentoInvalidoException e) {
+            if (k == KeyEvent.VK_UP) this.robo.mover(Robo.UP);
+            else if (k == KeyEvent.VK_DOWN) this.robo.mover(Robo.DOWN);
+            else if (k == KeyEvent.VK_RIGHT) this.robo.mover(Robo.RIGHT);
+            else if (k == KeyEvent.VK_LEFT) this.robo.mover(Robo.LEFT);
+            this.msgRofape = robo.toString();
+        } catch (Exception e) {
             this.msgRofape = e.getMessage();
         } finally {
-            paint(this.getGraphics());
+            if (robo.achoComida(comida)) {
+                this.msgRofape = this.robo + " Achou a Comida.";
+                paint(this.getGraphics());
+                this.setEnabled(false);
+            } else {
+                paint(this.getGraphics());
+            }
         }
     }
+
+
 
     @Override
     public void keyReleased(KeyEvent event) {
@@ -68,7 +62,6 @@ public class RoboPanel extends JPanel implements KeyListener {
         setVisible(true);
         requestFocus();
         addKeyListener(this);
-
     }
 
     /**
