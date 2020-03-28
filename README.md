@@ -42,3 +42,18 @@ e) Um método que verifique se o robô encontrou o alimento (está na mesma posi
 3. [x] Crie uma subclasse ReboInteligente que sobrescreve o método mover de forma que se robô fez um movimento inválido, garanta que o próximo movimento será válido. Cria uma classe Main que instancie um robô normal e outro inteligente, peça ao usuário para entrar com a posição do alimento, e faça os dois robôs se moverem randomicamente, um de cada vez, até que um deles encontre o alimento. Ao final, mostre quem achou o alimento e o número de movimentos que cada robô fez.
 
 4. [x] Para todos os itens anteriores, mostre os robôs se movendo na em uma matriz que representa a área de locomoção. Mostre também o alimento na posição indicada pelo usuário. Considere a área fixa de um quadrado com 5 unidades de lado.
+
+## Detalhes do Projeto
+
+ - Java: 13.
+ - IDE: IntellijIDEA.
+ 
+## Como testar?
+
+Existem três classes que podem ser executadas nesse projeto: 
+
+ - Main.java: Robo que se move pelo que o usuário manda usando as teclas do teclado. 
+ - OutraMain.java: Mostra dois Robos em uma disputa para ver quem acha a comida primeiro. 
+ - OutraOutraMain.java: Semelhante ao anterior, mas dessa vez um dos Robos é um "Robo Inteligente".
+ 
+ Todas essas classes estão na pasta src/uece/peoo/.
