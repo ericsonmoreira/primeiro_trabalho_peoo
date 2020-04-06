@@ -86,7 +86,7 @@ public class DisputaRobosPainel extends JPanel implements KeyListener {
                     } if (roboA.achoComida(comida)) {
                         flag.set(false);
                         this.msgRofapeA = this.roboA + " Robo Azul achou a Comida.";
-                        this.msgRofapeA = "Movimentos: roboAzul=" + countA + ", roboVerde=" + countB;
+                        this.msgRofapeB = "Movimentos: roboAzul=" + countA + ", roboVerde=" + countB;
                         paint(this.getGraphics());
                         this.setEnabled(false);
                     } else {
